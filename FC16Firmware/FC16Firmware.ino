@@ -509,7 +509,7 @@ void loop()
                               runningState = RM_TEST_LARSEN;
                               allChannelsOff();
                             }
-                            else  delay(20);
+                            else  delay(1000);
                             break;
 
     case RM_TEST_LARSEN:    
