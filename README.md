@@ -1,6 +1,6 @@
 Firmware for the FoxCub16 controller, please see forum for details.
 
-Built using Arduino IDE 1.0.1.
+Built using Arduino IDE 1.0.5.
 
 There is only one firmware for both regular operation and testing, you don't need to change firmware
 afterwards unless you want to upgrade to a newer firmware.
