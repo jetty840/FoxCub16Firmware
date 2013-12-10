@@ -17,6 +17,7 @@
 
 
 #include <EEPROM.h>
+#include <avr/wdt.h>
 #include "FC16Firmware.h"
 
 
@@ -223,6 +224,9 @@ long baudRates[] = {1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, 1
 
 void setup()
 {
+  // Setup the watchdog timer
+  wdt_enable (WDTO_1S);
+  
   // Read the starting channel
   startChannel = EEPROM.read(START_CHANNEL_EEPROM_ADDRESS);
   
@@ -689,6 +693,9 @@ void loop()
 
   //If we're not listening to renard, we dump all incoming serial
   if (( runningState != RM_LISTEN_RENARD ) && ( Serial.available() ))  Serial.read();
+  
+  // Reset the watchdog timer
+  wdt_reset();
 }
 
 
